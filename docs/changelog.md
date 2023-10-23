@@ -1,0 +1,1 @@
+As the tool progresses through versions, this file will document changes, new features, and bug fixes for each release.
