@@ -35,6 +35,19 @@ At its core, movMaker operates using a modular architecture. The tool is built a
 
     - Output Manager: Beyond just final outputs, this manager handles the writing of intermediate sequences to disk, aiding in caching and potential debugging. It offers configurability in terms of output paths and formats.
 
-
+    - User Communication Manager: Serving as the primary channel of interaction between movMaker and its users, this manager handles all forms of feedback and communication. Whether it's providing high-level progress updates, displaying user-friendly notifications, or logging detailed debugging information, the User Communication Manager ensures clarity and transparency in all operations. In a command-line context, it manages console outputs, offering both concise and verbose modes to cater to different user needs. As the tool evolves, this manager can also be extended to handle GUI-based interactions, ensuring consistent and user-centric communication across all interfaces.
 
 This modular approach ensures flexibility, allowing users to define custom workflows tailored to their specific needs. Furthermore, it supports future expansions, making it possible to introduce new features or improve existing ones without disrupting the overall system.
+
+
+
+Guiding Principles (Fundamentals):
+
+    - Never Work Alone: Collaborative effort ensures diverse perspectives and better solutions.
+    - Your Idea Isn't New: A humbling reminder that seeking out existing knowledge can lead to innovation.
+    - Never Take Shortcuts: Quality and thoroughness over quick fixes.
+    - If in Doubt, Do Nothing: Caution and patience prevent rash decisions.
+    - Always Use Responsibility as the Primary Reference Point: Accountability ensures integrity in work.
+    - Never Do More Than Is Asked For: Focus on the requirements to ensure efficiency.
+    - Always Plan to Do More Than Has Been Asked For: Be prepared for expansion and deeper needs.
+    - Only Add to What Exists: Build upon established foundations.
