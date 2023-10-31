@@ -1,24 +1,18 @@
 import csv
-import os
 
 class ConfigurationManager:
     def __init__(self, config_file):
         self.config_file = config_file
-        self.config_data = self.load_config_data()
+        self.config_data = self.load_configuration()
 
-    def load_config_data(self):
+    def load_configuration(self):
+        config_data = {}
         with open(self.config_file, 'r') as file:
-            reader = csv.DictReader(file)
-            return next(reader)
+            reader = csv.reader(file)
+            for row in reader:
+                key, value = row
+                config_data[key] = value
+        return config_data
 
-    def get_input_path(self):
-        return self.config_data["Input Path"]
-
-    def get_output_path(self):
-        return self.config_data["Output Path"]
-
-    def get_sequence_format(self):
-        # Extracting sequence format from the input path
-        input_path = self.get_input_path()
-        base_name = os.path.basename(input_path)
-        return base_name.split('.')[-2]
+    def get_configuration(self, key):
+        return self.config_data.get(key, None)

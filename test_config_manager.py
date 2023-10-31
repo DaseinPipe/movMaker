@@ -1,13 +1,19 @@
-from managers.configuration_manager import ConfigurationManager
-from managers.image_sequence_loader import ImageSequenceLoader
+from src.managers.configuration_manager import ConfigurationManager
+from src.managers.image_sequence_loader import ImageSequenceLoader
 
-# Initialize the ConfigurationManager and ImageSequenceLoader
-config_manager = ConfigurationManager("config.csv")
-sequence_loader = ImageSequenceLoader(config_manager.get_input_path())
+# Initialize Configuration Manager with the mock CSV
+config_manager = ConfigurationManager("data/configs/simple_config.csv")
 
-# Load and print the detected sequence
-sequence = sequence_loader.load_sequence()
+# Test retrieving values
+input_path = config_manager.get_configuration("Input_Path")
+output_path = config_manager.get_configuration("Output_Path")
 
-# Print configuration details
-print(f"Input Path: {config_manager.get_input_path()}")
-print(f"Output Path: {config_manager.get_output_path()}")
+print(f"Input Path: {input_path}")
+print(f"Output Path: {output_path}")
+
+# Initialize Image Sequence Loader with the input path
+sequence_loader = ImageSequenceLoader(input_path)
+
+# Test retrieving the sequence
+# sequence = sequence_loader.get_sequence()
+#print(f"First 5 files in the sequence: {sequence[:5]}")
