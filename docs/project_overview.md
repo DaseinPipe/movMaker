@@ -51,3 +51,4 @@ Guiding Principles (Fundamentals):
     - Never Do More Than Is Asked For: Focus on the requirements to ensure efficiency.
     - Always Plan to Do More Than Has Been Asked For: Be prepared for expansion and deeper needs.
     - Only Add to What Exists: Build upon established foundations.
+    - Our tools and structures are the common language through which all data, in all its forms, is understood.
