@@ -50,3 +50,22 @@ By building out these core components iteratively, you'll have a functioning pro
 I'll guide you through each step, providing code snippets, explanations, and best practices. Let's start with the **Configuration Manager**. Are you ready?
 
 
+ a single file in a sequence is made of 2 rigid points, the periods/full stops, connected by 3 indestructible and inflexible components, each completely independent, each available for use anywhere else and without constraint. someone putting these 5 things together this same way will always have created a sequence. even if they don't know what a sequence is. the first componenent is the name which is a sequence of grouped characters a-z, A-Z and 0-9 which may use _ (underscore) or - (hyphen/dash/minus sign) as separators, no other chars. the second component is an integer presented in padded format. the third and final component is the extension the particular type of file is given when it was created.
+- a sequence is a collection of files with the following things in common, name must be identical, extension must be identical, number must have identical padding but the integer must be unique to each file.
+
+4 steps to check input is valid sequence data
+
+1 - how many periods are there?
+2 - if 2 the what separates them?
+3 - if integers, then is what's after the second period an extension? (you can make this as simple as checking for 3-4 characters without worrying their validity for now)
+4 - if it is then are are the characters ahead of the first/left side period alphanumeric with _- and nothing else?
+
+passes these in this exact order then it's good to use.
+
+we can get even more rigid. put the components which make up a sequence as i described above in order of efficiency for a typical pc to deal with. i was incredibly specific, enough so that failure of any single thing means no further work need be done. for instance, if you start with the first letter of the name and find no files which have that as their first letter then that sequence is not there. but i expect there will be times when the first thing to do would be to find all the files with 2 periods separated by 4 integers, an outlier but certainly useful when 4-padded sequences are mixed in with 7, 8 and 9 padded ones (those are always 1000s of frames long too as they're always raw export from DI). You'd know better than me but maybe certain filesystems will do the heavy lifting and supply files of the same type without blinking - again, a bit of an outlier as almost every instance the image sequence will be alone in its own directory ;-)
+
+1 - extension
+2 - period ahead of the extension must have an integer to its left otherwise discard
+3 - next period left of the first and only integers separateing them, chuck anything with non-integer chars (that includes spaces and also nothing, ie "..ext")
+4 - padding - no sorting, this just throws away non-matching padded numbers
+5 - filename - start with first and simply iterate through to the first period, throw anything left away

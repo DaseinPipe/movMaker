@@ -1,19 +1,20 @@
 from src.managers.configuration_manager import ConfigurationManager
 from src.managers.image_sequence_loader import ImageSequenceLoader
+from src.raster_plugins.oiiotool_processor import OIIOToolProcessor
 
-# Initialize Configuration Manager with the mock CSV
-config_manager = ConfigurationManager("data/configs/simple_config.csv")
+config_manager = ConfigurationManager("simple_config.csv")
 
-# Test retrieving values
-input_path = config_manager.get_configuration("Input_Path")
-output_path = config_manager.get_configuration("Output_Path")
+sequence_loader = ImageSequenceLoader(config_manager.get_input_path())
+sequence = sequence_loader.load_sequence()
 
-print(f"Input Path: {input_path}")
-print(f"Output Path: {output_path}")
+oiiotool_processor = OIIOToolProcessor(
+    config_manager.get_oiiotool_path(),
+    config_manager.get_input_path(),
+    config_manager.get_filename(),
+    config_manager.get_start_frame(),
+    config_manager.get_end_frame(),
+    "path_to_temp_output_directory"  # Assuming processed files are stored temporarily before encoding
+)
+oiiotool_processor.process()
 
-# Initialize Image Sequence Loader with the input path
-sequence_loader = ImageSequenceLoader(input_path)
-
-# Test retrieving the sequence
-# sequence = sequence_loader.get_sequence()
-#print(f"First 5 files in the sequence: {sequence[:5]}")
+# ... continue with other processing and encoding steps
