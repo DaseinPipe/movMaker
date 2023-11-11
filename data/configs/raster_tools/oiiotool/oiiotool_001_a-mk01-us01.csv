@@ -1,3 +1,3 @@
-Status,path,filename,first frame,last frame ,extension,Anamorphic fix,Frame format,Scale to fit,Aspect lock,File colourspace,oiiotool path,ocio config path
-PASS,G:\jobs\IO\IN\client\tpo\scoop\EXR\CRVB_067_0010_BG01_V001\4608x3164\,CRVB_067_0010_BG01_V001,1001,1294,exr,yes,1080HD,height,yes,aces-cg,C:\vcpkg\installed\x64-windows\tools\openimageio\oiiotool.exe,Use oiiotool default
-FAIL,G:\jobs\IO\IN\client\tpo\scoop\EXR\CRVB_158_0040_BG01_V001\4608x3164\,CRVB_158_0040_BG01_V001,1001,1188,exr,yes,1080HD,height,yes,aces-cg,,
+Status,path,filename,first frame,last frame,extension,number_pad,Anamorphic fix,Frame format,Scale to fit,Aspect lock,File colourspace,oiiotool path,ocio config path,Output_Path
+PASS,G:\scratch\CacheClip\mtmp\source\cam05\,cam05,11,20,exr,4,yes,1080HD,height,yes,aces-cg,C:\vcpkg\packages\openimageio_x64-windows\tools\openimageio\oiiotool.exe,Use oiiotool default,G:\scratch\CacheClip\mtmp\finalmovs
+FAIL,G:\jobs\IO\IN\client\tpo\scoop\EXR\CRVB_158_0040_BG01_V001\4608x3164\,CRVB_158_0040_BG01_V001,1001,1188,exr,4,yes,1080HD,height,yes,aces-cg,,,

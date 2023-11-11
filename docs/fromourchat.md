@@ -69,3 +69,25 @@ we can get even more rigid. put the components which make up a sequence as i des
 3 - next period left of the first and only integers separateing them, chuck anything with non-integer chars (that includes spaces and also nothing, ie "..ext")
 4 - padding - no sorting, this just throws away non-matching padded numbers
 5 - filename - start with first and simply iterate through to the first period, throw anything left away
+
+
+
+by defining the name of a sequence this way:
+
+"any file names its sequence"
+
+instead of:
+
+"The name of a sequence is derived from the common base name shared by the files in the sequence."
+
+a load of things are possible.
+Put another way, if you define the name of a sequence this way:
+
+"The name of a sequence is derived from the common base name shared by the files in the sequence."
+
+instead of:
+
+"any file names its sequence"
+
+a lot of things become impossible.
+go back and read my explanation and this time consider that if we set rigid, immovable points in place and connect those using components which are indestructible and inflexible we create the most flexible and limitless environment for creating
